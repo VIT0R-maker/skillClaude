@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BG-02 — Blaze</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="live-backgrounds">
+    <main class="catalog-grid"><section class="demo-section" id="blaze" data-section>
+          <div class="demo-card">
+            <header class="demo-card-bar"><h2>Blaze</h2><div class="demo-actions"><button class="control-button" data-blaze-toggle>Pause</button><button class="control-button" data-blaze-reset>Reset</button></div></header>
+            <div class="demo-stage background-stage blaze-stage" data-blaze-stage>
+              <div class="blaze-capture" data-blaze-content aria-hidden="true"></div>
+              <canvas class="blaze-source" data-blaze-source layoutsubtree="true" aria-hidden="true"></canvas>
+              <div class="blaze-fallback" aria-hidden="true"></div>
+              <canvas class="blaze-output" data-blaze-output aria-hidden="true"></canvas>
+              <div class="background-overlay"><span>Atmosphere / 02</span><h3>Blaze field</h3><p>Canvas UI / Blaze</p></div>
+            </div>
+            <details class="parameter-panel">
+              <summary>Parameters</summary>
+              <div class="motion-controls live-controls">
+                <label><span>Height <output>0.97</output></span><input type="range" min="0.1" max="1" step="0.01" value="0.97" data-blaze-control="height" /></label>
+                <label><span>Distortion <output>0.6</output></span><input type="range" min="0" max="2" step="0.05" value="0.6" data-blaze-control="distortion" /></label>
+                <label><span>Ripple scale <output>0.5</output></span><input type="range" min="0.05" max="3" step="0.05" value="0.5" data-blaze-control="distortionScale" /></label>
+                <label><span>Speed <output>1</output></span><input type="range" min="0" max="3" step="0.05" value="1" data-blaze-control="speed" /></label>
+                <label><span>Sparks <output>0.5</output></span><input type="range" min="0" max="2" step="0.05" value="0.5" data-blaze-control="sparks" /></label>
+                <label><span>Spark density <output>1.5</output></span><input type="range" min="0.1" max="4" step="0.1" value="1.5" data-blaze-control="sparkDensity" /></label>
+                <label><span>Spark size <output>1</output></span><input type="range" min="0.1" max="3" step="0.1" value="1" data-blaze-control="sparkSize" /></label>
+                <label><span>Layers <output>4</output></span><input type="range" min="1" max="10" step="1" value="4" data-blaze-control="layers" /></label>
+                <label><span>Smoke <output>0.5</output></span><input type="range" min="0" max="2" step="0.05" value="0.5" data-blaze-control="smoke" /></label>
+                <label><span>Glow <output>1.5</output></span><input type="range" min="0" max="3" step="0.05" value="1.5" data-blaze-control="glow" /></label>
+              </div>
+            </details>
+          </div>
+        </section></main>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>

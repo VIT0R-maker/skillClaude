@@ -1,0 +1,22 @@
+{
+  "id": "INT-02",
+  "name": "Valence Core",
+  "mode": "interactions",
+  "category": "Botões e CTAs",
+  "entry": "demo.html",
+  "files": [
+    "demo.html",
+    "styles.css",
+    "script.js"
+  ],
+  "dependencies": [],
+  "source": {
+    "name": "Motion Lab local implementation",
+    "url": "",
+    "license": "Review original source comments before redistribution"
+  },
+  "accessibility": {
+    "reducedMotion": true
+  },
+  "migratedFrom": "motion-lab/component-motion.html#valence-core"
+}

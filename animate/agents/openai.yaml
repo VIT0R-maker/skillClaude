@@ -1,0 +1,6 @@
+interface:
+  display_name: "Animate"
+  short_description: "Local motion catalog for reusable web animations"
+  default_prompt: "Use $animate to start or maintain the local animation catalog, add or refine an example, or return its implementation path."
+policy:
+  allow_implicit_invocation: false

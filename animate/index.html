@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Animate — catálogo local de animações reutilizáveis para interfaces web."
+    />
+    <title>Animate — Motion Library</title>
+    <link rel="stylesheet" href="assets/css/fonts.css" />
+    <link rel="stylesheet" href="assets/css/runtime.css" />
+    <link rel="stylesheet" href="assets/css/catalog.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.185.1/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.185.1/examples/jsm/"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <header class="topbar">
+      <nav class="mode-nav mode-nav--left" aria-label="Modos de animação">
+        <a href="#idle" data-mode-link="idle">Idle</a>
+        <a href="#transitions" data-mode-link="transitions">Entradas</a>
+      </nav>
+      <a class="wordmark" href="#idle" aria-label="Animate — início">ANIMATE</a>
+      <nav class="mode-nav mode-nav--right" aria-label="Modos de animação">
+        <a href="#interactions" data-mode-link="interactions">Interações</a>
+        <a href="#backgrounds" data-mode-link="backgrounds">Backgrounds</a>
+      </nav>
+    </header>
+
+    <main id="catalog" aria-live="polite">
+      <div class="loading-state">
+        <span>Motion library</span>
+        <strong>Carregando animações…</strong>
+      </div>
+    </main>
+
+    <div class="copy-toast" role="status" aria-live="polite" hidden></div>
+
+    <script src="assets/runtime/js/settings.js"></script>
+    <script type="module" src="assets/js/catalog.js"></script>
+  </body>
+</html>

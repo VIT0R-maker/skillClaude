@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BG-01 — Liquid shader</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="live-backgrounds">
+    <main class="catalog-grid"><section class="demo-section" id="liquid-shader" data-section>
+          <div class="demo-card">
+            <header class="demo-card-bar"><h2>Liquid shader</h2><div class="demo-actions"><button class="control-button" data-canvas-toggle="shader-canvas">Pause</button><button class="control-button" data-canvas-reset="shader-canvas">Reset</button></div></header>
+            <div class="demo-stage background-stage shader-stage"><canvas id="shader-canvas" aria-hidden="true"></canvas><div class="background-overlay"><span>Atmosphere / 01</span><h3>Liquid spectrum</h3><p>Time, resolution and pointer as uniforms.</p></div></div>
+            <details class="parameter-panel">
+              <summary>Parameters</summary>
+              <div class="motion-controls live-controls">
+                <label><span>Speed <output>0.22</output></span><input type="range" min="0" max="0.8" step="0.01" value="0.22" data-live-control="speed" /></label>
+                <label><span>Scale <output>2</output></span><input type="range" min="0.5" max="5" step="0.1" value="2" data-live-control="scale" /></label>
+                <label><span>Wave <output>0.14</output></span><input type="range" min="0" max="0.4" step="0.01" value="0.14" data-live-control="wave" /></label>
+                <label><span>Glow <output>0.13</output></span><input type="range" min="0" max="0.4" step="0.01" value="0.13" data-live-control="glow" /></label>
+                <label><span>Pointer <output>0.12</output></span><input type="range" min="0" max="0.5" step="0.01" value="0.12" data-live-control="pointer" /></label>
+              </div>
+            </details>
+          </div>
+        </section></main>
+    <script src="script.js"></script>
+  </body>
+</html>

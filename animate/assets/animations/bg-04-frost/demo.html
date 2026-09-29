@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BG-04 — Frost</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="live-backgrounds">
+    <main class="catalog-grid"><section class="demo-section" id="frost" data-section>
+          <div class="demo-card">
+            <header class="demo-card-bar"><h2>Frost</h2><div class="demo-actions"><button class="control-button" data-frost-toggle>Pause</button><button class="control-button" data-frost-reset>Reset</button></div></header>
+            <div class="demo-stage background-stage frost-stage" data-frost-stage>
+              <div class="frost-capture" data-frost-content aria-hidden="true"></div>
+              <canvas class="frost-source" data-frost-source data-canvasui-prepainted="true" aria-hidden="true"></canvas>
+              <div class="frost-fallback" aria-hidden="true"></div>
+              <canvas class="frost-output" data-frost-output aria-hidden="true"></canvas>
+              <div class="background-overlay"><span>Atmosphere / 04</span><h3>Frozen pane</h3><p>Canvas UI / Frost · move the pointer to melt the ice</p></div>
+            </div>
+            <details class="parameter-panel">
+              <summary>Parameters</summary>
+              <div class="motion-controls live-controls">
+                <label><span>Base frost <output>0.62</output></span><input type="range" min="0" max="1" step="0.01" value="0.62" data-frost-control="frost" /></label>
+                <label><span>Strength <output>1.35</output></span><input type="range" min="0" max="2" step="0.01" value="1.35" data-frost-control="strength" /></label>
+                <label><span>Contrast <output>4</output></span><input type="range" min="0.5" max="8" step="0.1" value="4" data-frost-control="contrast" /></label>
+                <label><span>Crispness <output>2</output></span><input type="range" min="0.1" max="5" step="0.1" value="2" data-frost-control="crispness" /></label>
+                <label><span>Highlights <output>0.58</output></span><input type="range" min="0" max="1" step="0.01" value="0.58" data-frost-control="highlight" /></label>
+                <label><span>Haze <output>0.9</output></span><input type="range" min="0" max="1" step="0.01" value="0.9" data-frost-control="haze" /></label>
+                <label><span>Tint <output>0.75</output></span><input type="range" min="0" max="1" step="0.01" value="0.75" data-frost-control="tintStrength" /></label>
+                <label><span>Saturation <output>0.65</output></span><input type="range" min="0" max="2" step="0.01" value="0.65" data-frost-control="saturation" /></label>
+                <label><span>Brightness <output>1.08</output></span><input type="range" min="0.2" max="2" step="0.01" value="1.08" data-frost-control="brightness" /></label>
+                <label><span>Refraction <output>1</output></span><input type="range" min="0" max="3" step="0.01" value="1" data-frost-control="refraction" /></label>
+                <label><span>IOR <output>1.31</output></span><input type="range" min="1.01" max="2.5" step="0.01" value="1.31" data-frost-control="ior" /></label>
+                <label><span>Surface detail <output>2.2</output></span><input type="range" min="0" max="5" step="0.1" value="2.2" data-frost-control="detail" /></label>
+                <label><span>Texture scale <output>1.8</output></span><input type="range" min="0.25" max="5" step="0.05" value="1.8" data-frost-control="textureScale" /></label>
+                <label><span>Fresnel <output>1.15</output></span><input type="range" min="0" max="2" step="0.01" value="1.15" data-frost-control="fresnel" /></label>
+                <label><span>Melt radius <output>0.22</output></span><input type="range" min="0.02" max="0.7" step="0.01" value="0.22" data-frost-control="meltRadius" /></label>
+                <label><span>Melt noise <output>0.35</output></span><input type="range" min="0" max="1" step="0.01" value="0.35" data-frost-control="meltNoise" /></label>
+                <label><span>Melt strength <output>0.8</output></span><input type="range" min="0" max="1" step="0.01" value="0.8" data-frost-control="meltStrength" /></label>
+                <label><span>Refreeze <output>1.2</output></span><input type="range" min="0" max="5" step="0.1" value="1.2" data-frost-control="refreeze" /></label>
+                <label><span>Opacity <output>1</output></span><input type="range" min="0" max="1" step="0.01" value="1" data-frost-control="opacity" /></label>
+                <label><span>Shimmer <output>0.28</output></span><input type="range" min="0" max="1" step="0.01" value="0.28" data-frost-control="shimmer" /></label>
+              </div>
+            </details>
+          </div>
+        </section></main>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>

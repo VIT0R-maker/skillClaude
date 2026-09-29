@@ -1,0 +1,24 @@
+{
+  "id": "BG-08",
+  "name": "Masked Matrix",
+  "mode": "backgrounds",
+  "category": "Bordas de seção",
+  "entry": "demo.html",
+  "files": [
+    "demo.html",
+    "styles.css",
+    "script.js"
+  ],
+  "dependencies": [
+    "Unicorn Studio SDK and remote scene"
+  ],
+  "source": {
+    "name": "Unicorn Studio",
+    "url": "https://www.unicorn.studio/",
+    "license": "Remote scene; review service terms"
+  },
+  "accessibility": {
+    "reducedMotion": true
+  },
+  "migratedFrom": "motion-lab/live-backgrounds.html#masked-matrix"
+}

@@ -1,0 +1,27 @@
+{
+  "id": "IDL-02",
+  "name": "Glass object",
+  "mode": "idle",
+  "category": "Objetos 3D",
+  "entry": "demo.html",
+  "files": [
+    "demo.html",
+    "styles.css",
+    "script.js",
+    "canvasui-glass-object.js",
+    "assets/glass-mark.svg",
+    "assets/glass-backdrop.svg"
+  ],
+  "dependencies": [
+    "Three.js 0.185.1 via jsDelivr"
+  ],
+  "source": {
+    "name": "Motion Lab local implementation",
+    "url": "",
+    "license": "Review original source comments before redistribution"
+  },
+  "accessibility": {
+    "reducedMotion": true
+  },
+  "migratedFrom": "motion-lab/spatial-3d.html#glass-object"
+}

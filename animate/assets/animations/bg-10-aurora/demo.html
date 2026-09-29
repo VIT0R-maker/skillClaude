@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BG-10 — Aurora</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="live-backgrounds">
+    <main class="catalog-grid"><section class="demo-section" id="reactbits-aurora" data-section>
+          <div class="demo-card">
+            <header class="demo-card-bar"><h2>React Bits Aurora</h2><div class="demo-actions"><button class="control-button" data-aurora-toggle>Pause</button><button class="control-button" data-aurora-reset>Reset</button></div></header>
+            <div class="demo-stage background-stage reactbits-aurora-stage" data-aurora-stage>
+              <div class="reactbits-aurora-fallback" aria-hidden="true"></div>
+              <canvas data-aurora-canvas aria-hidden="true"></canvas>
+              <div class="background-overlay"><span>Atmosphere / 10</span><h3>Aurora</h3><p>React Bits · vanilla WebGL2</p></div>
+            </div>
+            <details class="parameter-panel">
+              <summary>Parameters</summary>
+              <div class="motion-controls live-controls">
+                <label><span>Speed <output>1</output></span><input type="range" min="0" max="3" step="0.05" value="1" data-aurora-control="speed" /></label>
+                <label><span>Amplitude <output>1</output></span><input type="range" min="0" max="3" step="0.05" value="1" data-aurora-control="amplitude" /></label>
+                <label><span>Blend <output>0.5</output></span><input type="range" min="0.01" max="1" step="0.01" value="0.5" data-aurora-control="blend" /></label>
+                <label><span>Opacity <output>1</output></span><input type="range" min="0" max="1" step="0.05" value="1" data-aurora-control="opacity" /></label>
+                <label><span>Hue <output>0deg</output></span><input type="range" min="-180" max="180" step="5" value="0" data-aurora-control="hue" data-suffix="deg" /></label>
+                <label><span>Saturation <output>1</output></span><input type="range" min="0" max="2" step="0.05" value="1" data-aurora-control="saturation" /></label>
+                <label><span>Brightness <output>1</output></span><input type="range" min="0.4" max="2" step="0.05" value="1" data-aurora-control="brightness" /></label>
+                <label><span>Quality <output>1</output></span><input type="range" min="0.5" max="2" step="0.25" value="1" data-aurora-control="quality" /></label>
+                <label><span>Light mode <output>Off</output></span><input type="range" min="0" max="1" step="1" value="0" data-aurora-control="lightMode" /></label>
+              </div>
+            </details>
+          </div>
+        </section></main>
+    <script src="script.js"></script>
+  </body>
+</html>

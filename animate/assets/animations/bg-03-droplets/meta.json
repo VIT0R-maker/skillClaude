@@ -1,0 +1,23 @@
+{
+  "id": "BG-03",
+  "name": "Droplets",
+  "mode": "backgrounds",
+  "category": "Overlays de superfície",
+  "entry": "demo.html",
+  "files": [
+    "demo.html",
+    "styles.css",
+    "script.js",
+    "canvasui-droplets.js"
+  ],
+  "dependencies": [],
+  "source": {
+    "name": "Motion Lab local implementation",
+    "url": "",
+    "license": "Review original source comments before redistribution"
+  },
+  "accessibility": {
+    "reducedMotion": true
+  },
+  "migratedFrom": "motion-lab/live-backgrounds.html#droplets"
+}

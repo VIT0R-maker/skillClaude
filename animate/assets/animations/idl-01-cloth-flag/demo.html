@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>IDL-01 — Cloth flag</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="component-motion">
+    <main class="catalog-grid"><section class="demo-section" id="cloth-flag" data-section>
+          <div class="demo-card">
+            <header class="demo-card-bar"><h2>Cloth flag</h2></header>
+            <div class="demo-stage cloth-stage">
+              <span class="flag-pole" aria-hidden="true"></span>
+              <div class="cloth-wrapper" data-cloth-wrapper>
+                <canvas class="cloth-source" data-cloth-source layoutsubtree="true">
+                  <div class="cloth-design" data-cloth-content><span>ML</span><strong>Motion<br />Laboratory</strong><small>Canvas UI / Cloth</small></div>
+                </canvas>
+                <div class="cloth-fallback" aria-hidden="true"><div class="cloth-design"><span>ML</span><strong>Motion<br />Laboratory</strong><small>Canvas UI / Cloth</small></div></div>
+                <canvas class="cloth-output" data-cloth-output aria-hidden="true"></canvas>
+              </div>
+            </div>
+            <details class="parameter-panel">
+              <summary>Parameters</summary>
+              <div class="motion-controls cloth-controls">
+                <label><span>Wind <output>1.4</output></span><input type="range" min="0" max="8" step="0.1" value="1.4" data-cloth-control="wind" /></label>
+                <label><span>Speed <output>0.42</output></span><input type="range" min="0" max="2" step="0.01" value="0.42" data-cloth-control="speed" /></label>
+                <label><span>Amplitude <output>18px</output></span><input type="range" min="0" max="80" step="1" value="18" data-cloth-control="amplitude" data-suffix="px" /></label>
+                <label><span>Drape <output>16px</output></span><input type="range" min="0" max="80" step="1" value="16" data-cloth-control="drape" data-suffix="px" /></label>
+                <label><span>Brush <output>1.1</output></span><input type="range" min="0" max="3" step="0.05" value="1.1" data-cloth-control="brush" /></label>
+                <label><span>Brush size <output>95px</output></span><input type="range" min="20" max="240" step="5" value="95" data-cloth-control="brushSize" data-suffix="px" /></label>
+                <label><span>Damping <output>1.65</output></span><input type="range" min="0.05" max="8" step="0.05" value="1.65" data-cloth-control="damping" /></label>
+                <label><span>Light <output>0.58</output></span><input type="range" min="0" max="1" step="0.01" value="0.58" data-cloth-control="light" /></label>
+                <label><span>Sheen <output>0.12</output></span><input type="range" min="0" max="1" step="0.01" value="0.12" data-cloth-control="sheen" /></label>
+                <label><span>Shadow <output>0.28</output></span><input type="range" min="0" max="1" step="0.01" value="0.28" data-cloth-control="shadow" /></label>
+                <label><span>Corner radius <output>8px</output></span><input type="range" min="0" max="40" step="1" value="8" data-cloth-control="cornerRadius" data-suffix="px" /></label>
+                <label><span>Perspective <output>900px</output></span><input type="range" min="200" max="2000" step="25" value="900" data-cloth-control="perspective" data-suffix="px" /></label>
+              </div>
+            </details>
+          </div>
+        </section></main>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "id": "BG-01",
+  "name": "Liquid shader",
+  "mode": "backgrounds",
+  "category": "Página e seções",
+  "entry": "demo.html",
+  "files": [
+    "demo.html",
+    "styles.css",
+    "script.js"
+  ],
+  "dependencies": [],
+  "source": {
+    "name": "Motion Lab local implementation",
+    "url": "",
+    "license": "Review original source comments before redistribution"
+  },
+  "accessibility": {
+    "reducedMotion": true
+  },
+  "migratedFrom": "motion-lab/live-backgrounds.html#liquid-shader"
+}

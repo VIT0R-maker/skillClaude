@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>INT-01 — Glass shimmer CTA</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="component-motion">
+    <main class="catalog-grid"><section class="demo-section" id="aura-glass-cta" data-section>
+          <div class="demo-card">
+            <header class="demo-card-bar"><h2>Glass shimmer CTA</h2></header>
+            <div class="demo-stage aura-cta-stage">
+              <button class="aura-cta" type="button" data-aura-cta>
+                <span class="aura-cta__beam aura-cta__beam--outer" aria-hidden="true"></span>
+                <span class="aura-cta__surface" aria-hidden="true"></span>
+                <span class="aura-cta__content">
+                  <span class="aura-cta__orb" aria-hidden="true"><i></i></span>
+                  <strong>Generate My Site</strong>
+                  <span class="aura-cta__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m21.64 3.64-1.28-1.28a1.21 1.21 0 0 0-1.72 0L2.36 18.64a1.21 1.21 0 0 0 0 1.72l1.28 1.28a1.2 1.2 0 0 0 1.72 0L21.64 5.36a1.2 1.2 0 0 0 0-1.72"/><path d="m14 7 3 3"/><path d="M5 6v4M19 14v4M10 2v2M7 8H3M21 16h-4M11 3H9"/></svg>
+                  </span>
+                </span>
+              </button>
+            </div>
+            <details class="parameter-panel">
+              <summary>Parameters</summary>
+              <div class="motion-controls aura-cta-controls">
+                <label><span>Beam speed <output>4s</output></span><input type="range" min="1" max="10" step="0.1" value="4" data-aura-cta-control="beamSpeed" data-suffix="s" /></label>
+                <label><span>Beam spread <output>90deg</output></span><input type="range" min="15" max="220" step="5" value="90" data-aura-cta-control="spread" data-suffix="deg" /></label>
+                <label><span>Border <output>1px</output></span><input type="range" min="1" max="6" step="0.5" value="1" data-aura-cta-control="cut" data-suffix="px" /></label>
+                <label><span>Glass opacity <output>0.8</output></span><input type="range" min="0.2" max="1" step="0.01" value="0.8" data-aura-cta-control="glassOpacity" /></label>
+                <label><span>Blur <output>8px</output></span><input type="range" min="0" max="24" step="1" value="8" data-aura-cta-control="blur" data-suffix="px" /></label>
+                <label><span>Hover scale <output>1.05</output></span><input type="range" min="1" max="1.15" step="0.01" value="1.05" data-aura-cta-control="hoverScale" /></label>
+                <label><span>Glow size <output>40px</output></span><input type="range" min="0" max="90" step="2" value="40" data-aura-cta-control="glow" data-suffix="px" /></label>
+                <label><span>Magnetic pull <output>8px</output></span><input type="range" min="0" max="24" step="1" value="8" data-aura-cta-control="magnet" data-suffix="px" /></label>
+                <label><span>Orb speed <output>3.2s</output></span><input type="range" min="0.6" max="8" step="0.1" value="3.2" data-aura-cta-control="orbSpeed" data-suffix="s" /></label>
+                <label><span>Orb glow <output>0.65</output></span><input type="range" min="0" max="1" step="0.01" value="0.65" data-aura-cta-control="orbGlow" /></label>
+              </div>
+            </details>
+          </div>
+        </section></main>
+    <script src="script.js"></script>
+  </body>
+</html>

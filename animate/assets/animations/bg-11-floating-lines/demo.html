@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BG-11 — Floating lines</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="live-backgrounds">
+    <main class="catalog-grid"><section class="demo-section" id="floating-lines" data-section>
+          <div class="demo-card">
+            <header class="demo-card-bar"><h2>React Bits Floating Lines</h2><div class="demo-actions"><button class="control-button" data-floating-lines-toggle>Pause</button><button class="control-button" data-floating-lines-reset>Reset</button></div></header>
+            <div class="demo-stage background-stage floating-lines-stage" data-floating-lines-stage>
+              <div class="floating-lines-fallback" aria-hidden="true"></div>
+              <canvas data-floating-lines-canvas aria-hidden="true"></canvas>
+              <div class="background-overlay"><span>Atmosphere / 11</span><h3>Floating Lines</h3><p>React Bits · vanilla WebGL2 · move the pointer</p></div>
+            </div>
+            <details class="parameter-panel">
+              <summary>Parameters</summary>
+              <div class="motion-controls live-controls">
+                <label><span>Speed <output>1</output></span><input type="range" min="0" max="3" step="0.05" value="1" data-floating-lines-control="speed" /></label>
+                <label><span>Top lines <output>6</output></span><input type="range" min="0" max="20" step="1" value="6" data-floating-lines-control="topLines" /></label>
+                <label><span>Middle lines <output>8</output></span><input type="range" min="0" max="20" step="1" value="8" data-floating-lines-control="middleLines" /></label>
+                <label><span>Bottom lines <output>10</output></span><input type="range" min="0" max="20" step="1" value="10" data-floating-lines-control="bottomLines" /></label>
+                <label><span>Line spacing <output>5</output></span><input type="range" min="0.5" max="12" step="0.5" value="5" data-floating-lines-control="distance" /></label>
+                <label><span>Bend radius <output>5</output></span><input type="range" min="0.5" max="15" step="0.25" value="5" data-floating-lines-control="bendRadius" /></label>
+                <label><span>Bend strength <output>-0.5</output></span><input type="range" min="-2" max="2" step="0.05" value="-0.5" data-floating-lines-control="bendStrength" /></label>
+                <label><span>Mouse damping <output>0.05</output></span><input type="range" min="0.01" max="0.3" step="0.01" value="0.05" data-floating-lines-control="damping" /></label>
+                <label><span>Parallax <output>0.2</output></span><input type="range" min="0" max="0.8" step="0.05" value="0.2" data-floating-lines-control="parallax" /></label>
+                <label><span>Opacity <output>1</output></span><input type="range" min="0" max="1" step="0.05" value="1" data-floating-lines-control="opacity" /></label>
+                <label><span>Hue <output>0deg</output></span><input type="range" min="-180" max="180" step="5" value="0" data-floating-lines-control="hue" data-suffix="deg" /></label>
+                <label><span>Light mode <output>Off</output></span><input type="range" min="0" max="1" step="1" value="0" data-floating-lines-control="lightMode" /></label>
+              </div>
+            </details>
+          </div>
+        </section></main>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>INT-03 — Border glow</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="component-motion">
+    <main class="catalog-grid"><section class="demo-section" id="border-glow" data-section>
+          <div class="demo-card">
+            <header class="demo-card-bar"><h2>React Bits Border Glow</h2><div class="demo-actions"><button class="control-button" data-border-glow-replay>Replay</button></div></header>
+            <div class="demo-stage border-glow-stage">
+              <article class="border-glow-card" data-border-glow-card tabindex="0">
+                <span class="border-glow-border" aria-hidden="true"></span>
+                <span class="border-glow-fill" aria-hidden="true"></span>
+                <span class="border-glow-aura" aria-hidden="true"><i></i></span>
+                <div class="border-glow-content"><span>RB / 04</span><strong>Border Glow</strong><small>Move pointer toward an edge</small></div>
+              </article>
+            </div>
+            <details class="parameter-panel">
+              <summary>Parameters</summary>
+              <div class="motion-controls border-glow-controls">
+                <label><span>Edge sensitivity <output>30</output></span><input type="range" min="0" max="80" step="1" value="30" data-border-glow-control="edgeSensitivity" /></label>
+                <label><span>Glow radius <output>40px</output></span><input type="range" min="5" max="90" step="1" value="40" data-border-glow-control="glowRadius" data-suffix="px" /></label>
+                <label><span>Glow intensity <output>1</output></span><input type="range" min="0" max="2" step="0.05" value="1" data-border-glow-control="glowIntensity" /></label>
+                <label><span>Cone spread <output>25%</output></span><input type="range" min="5" max="40" step="1" value="25" data-border-glow-control="coneSpread" data-suffix="%" /></label>
+                <label><span>Border radius <output>28px</output></span><input type="range" min="0" max="60" step="1" value="28" data-border-glow-control="borderRadius" data-suffix="px" /></label>
+                <label><span>Fill opacity <output>0.5</output></span><input type="range" min="0" max="1" step="0.05" value="0.5" data-border-glow-control="fillOpacity" /></label>
+                <label><span>Palette hue <output>0deg</output></span><input type="range" min="-180" max="180" step="5" value="0" data-border-glow-control="paletteHue" data-suffix="deg" /></label>
+                <label><span>Glow hue <output>40deg</output></span><input type="range" min="0" max="360" step="5" value="40" data-border-glow-control="glowHue" data-suffix="deg" /></label>
+                <label><span>Intro sweep <output>On</output></span><input type="range" min="0" max="1" step="1" value="1" data-border-glow-control="animated" /></label>
+                <label><span>Sweep duration <output>4s</output></span><input type="range" min="1" max="8" step="0.1" value="4" data-border-glow-control="sweepDuration" data-suffix="s" /></label>
+              </div>
+            </details>
+          </div>
+        </section></main>
+    <script src="script.js"></script>
+  </body>
+</html>

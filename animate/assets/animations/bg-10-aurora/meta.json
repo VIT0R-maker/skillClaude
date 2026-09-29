@@ -1,0 +1,22 @@
+{
+  "id": "BG-10",
+  "name": "Aurora",
+  "mode": "backgrounds",
+  "category": "Página e seções",
+  "entry": "demo.html",
+  "files": [
+    "demo.html",
+    "styles.css",
+    "script.js"
+  ],
+  "dependencies": [],
+  "source": {
+    "name": "React Bits",
+    "url": "https://www.reactbits.dev/",
+    "license": "Review upstream license before redistribution"
+  },
+  "accessibility": {
+    "reducedMotion": true
+  },
+  "migratedFrom": "motion-lab/live-backgrounds.html#reactbits-aurora"
+}

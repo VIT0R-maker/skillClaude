@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BG-09 — Glass wave</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="live-backgrounds">
+    <main class="catalog-grid"><section class="demo-section" id="glass-wave" data-section>
+          <div class="demo-card">
+            <header class="demo-card-bar"><h2>Glass wave — Spline</h2><div class="demo-actions"><button class="control-button" data-spline-toggle>Pause</button><button class="control-button" data-spline-reset>Reset</button></div></header>
+            <div class="demo-stage background-stage spline-stage" data-spline-stage data-spline-effect="glass-wave" data-spline-src="https://my.spline.design/glasswave-6HLEnvJfCRsq1aKT2xqlgme7">
+              <div class="spline-fallback" aria-hidden="true"></div>
+              <div class="spline-frame" data-spline-frame></div>
+              <div class="background-overlay"><span>Atmosphere / 09</span><h3>Glass wave</h3><p>Aura A69878E / Spline · move the pointer</p></div>
+            </div>
+            <details class="parameter-panel">
+              <summary>Parameters</summary>
+              <div class="motion-controls live-controls">
+                <label><span>Opacity <output>1</output></span><input type="range" min="0.2" max="1" step="0.05" value="1" data-spline-control="opacity" /></label>
+                <label><span>Zoom <output>1.04</output></span><input type="range" min="0.8" max="1.4" step="0.01" value="1.04" data-spline-control="zoom" /></label>
+                <label><span>Vertical <output>0%</output></span><input type="range" min="-30" max="30" step="1" value="0" data-spline-control="vertical" data-suffix="%" /></label>
+                <label><span>Brightness <output>1</output></span><input type="range" min="0.4" max="2" step="0.05" value="1" data-spline-control="brightness" /></label>
+                <label><span>Saturation <output>1</output></span><input type="range" min="0" max="2" step="0.05" value="1" data-spline-control="saturation" /></label>
+                <label><span>Hue <output>0deg</output></span><input type="range" min="-180" max="180" step="5" value="0" data-spline-control="hue" data-suffix="deg" /></label>
+              </div>
+            </details>
+          </div>
+        </section></main>
+    <script src="script.js"></script>
+  </body>
+</html>

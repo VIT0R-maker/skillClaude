@@ -1,0 +1,22 @@
+{
+  "id": "INT-04",
+  "name": "Option wheel",
+  "mode": "interactions",
+  "category": "Navegação e seleção",
+  "entry": "demo.html",
+  "files": [
+    "demo.html",
+    "styles.css",
+    "script.js"
+  ],
+  "dependencies": [],
+  "source": {
+    "name": "React Bits",
+    "url": "https://www.reactbits.dev/",
+    "license": "Review upstream license before redistribution"
+  },
+  "accessibility": {
+    "reducedMotion": true
+  },
+  "migratedFrom": "motion-lab/component-motion.html#option-wheel"
+}

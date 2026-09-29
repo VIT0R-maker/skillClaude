@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>INT-02 — Valence Core</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="component-motion">
+    <main class="catalog-grid"><section class="demo-section" id="valence-core" data-section>
+          <div class="demo-card">
+            <header class="demo-card-bar"><h2>Valence Core WebGL button</h2><div class="demo-actions"><button class="control-button" data-valence-toggle>Pause</button><button class="control-button" data-valence-reset>Replay</button></div></header>
+            <div class="demo-stage valence-stage" data-valence-stage>
+              <button class="valence-button" type="button" data-valence-button>
+                <span class="valence-fallback" aria-hidden="true"></span>
+                <canvas data-valence-canvas aria-hidden="true"></canvas>
+                <span class="valence-label">VALENCE CORE</span>
+              </button>
+            </div>
+            <details class="parameter-panel">
+              <summary>Parameters</summary>
+              <div class="motion-controls valence-controls">
+                <label><span>Idle energy <output>2.4</output></span><input type="range" min="0" max="6" step="0.1" value="2.4" data-valence-control="idleArcs" /></label>
+                <label><span>Hover energy <output>5.8</output></span><input type="range" min="0" max="6" step="0.1" value="5.8" data-valence-control="hoverArcs" /></label>
+                <label><span>Speed <output>1</output></span><input type="range" min="0" max="3" step="0.05" value="1" data-valence-control="speed" /></label>
+                <label><span>Distortion <output>0.11</output></span><input type="range" min="0" max="0.3" step="0.01" value="0.11" data-valence-control="distortion" /></label>
+                <label><span>Glow <output>1</output></span><input type="range" min="0" max="2.5" step="0.05" value="1" data-valence-control="glow" /></label>
+                <label><span>Click flash <output>1</output></span><input type="range" min="0" max="3" step="0.05" value="1" data-valence-control="flash" /></label>
+                <label><span>Corner radius <output>0.14</output></span><input type="range" min="0.02" max="0.3" step="0.01" value="0.14" data-valence-control="radius" /></label>
+                <label><span>Intro <output>1.15s</output></span><input type="range" min="0" max="3" step="0.05" value="1.15" data-valence-control="intro" data-suffix="s" /></label>
+                <label><span>Hue <output>0deg</output></span><input type="range" min="-180" max="180" step="5" value="0" data-valence-control="hue" data-suffix="deg" /></label>
+                <label><span>Shadow <output>15px</output></span><input type="range" min="0" max="50" step="1" value="15" data-valence-control="shadow" data-suffix="px" /></label>
+              </div>
+            </details>
+          </div>
+        </section></main>
+    <script src="script.js"></script>
+  </body>
+</html>

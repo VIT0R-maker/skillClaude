@@ -1,0 +1,24 @@
+{
+  "id": "BG-07",
+  "name": "Gradient field",
+  "mode": "backgrounds",
+  "category": "Página e seções",
+  "entry": "demo.html",
+  "files": [
+    "demo.html",
+    "styles.css",
+    "script.js"
+  ],
+  "dependencies": [
+    "Unicorn Studio SDK and remote scene"
+  ],
+  "source": {
+    "name": "Unicorn Studio",
+    "url": "https://www.unicorn.studio/",
+    "license": "Remote scene; review service terms"
+  },
+  "accessibility": {
+    "reducedMotion": true
+  },
+  "migratedFrom": "motion-lab/live-backgrounds.html#gradient-field"
+}
