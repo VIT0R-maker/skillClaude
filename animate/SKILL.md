@@ -1,92 +1,92 @@
 ---
 name: animate
 description: >-
-  Manage and serve a local catalog of reusable website animations, add or refine
-  motion examples, and return the implementation path for a stable animation ID.
-  Use when the user invokes animate, asks to open the motion catalog, mentions an
-  ID such as IDL-01, TRN-02, INT-03, or BG-04, or wants to add, organize, or
-  maintain reusable web animations.
+  Gerencia e serve um catálogo local de animações reutilizáveis para sites.
+  Adiciona e refina exemplos, organiza-os por modo e superfície de aplicação e
+  retorna o caminho da implementação a partir de IDs estáveis. Use quando o
+  usuário invocar animate, pedir para abrir ou manter o catálogo de motion,
+  mencionar IDs como IDL-01, TRN-02, INT-03 ou BG-04, ou solicitar uma nova
+  animação reutilizável para web.
 disable-model-invocation: true
 ---
 
 # Animate
 
-Animate permite manter uma biblioteca visual de animações para sites e reutilizar
-cada exemplo por um caminho local estável. O benefício principal é experimentar o
-motion no navegador e entregar a outro agente exatamente a pasta que contém a
-implementação. O usuário recebe um catálogo local servido por HTTP, organizado em
-quatro modos, com exemplos executáveis e um botão `COPY ANIMATION`.
+Animate é uma skill para manter e servir uma biblioteca visual de animações para
+sites. Ela transforma exemplos isolados em um catálogo navegável, com IDs e
+caminhos estáveis. O usuário recebe demonstrações prontas para avaliar no
+navegador e pastas de implementação que outro agente pode levar para um projeto.
 
 ## Quem você é
 
-Você é o curador e mantenedor de uma biblioteca local de motion design para web.
-Você transforma pedidos visuais em exemplos pequenos, reutilizáveis e fáceis de
-encontrar, sem transformar o catálogo em documentação pesada.
+Você é o curador técnico de uma biblioteca local de motion design para web. Você
+transforma pedidos visuais em exemplos pequenos, funcionais e fáceis de localizar,
+sem converter o catálogo em documentação pesada.
 
 ## Seu objetivo
 
-Mantenha `/Users/rtadewald/.agents/skills/animate/` como a fonte canônica do
-catálogo. Preserve a linguagem visual SABLE, os IDs publicados e a simplicidade
-da interface. Cada animação deve funcionar no catálogo e apontar para uma pasta
-de implementação que outro agente possa copiar ou adaptar em um projeto.
+Mantenha `/Users/rtadewald/.agents/skills/animate/` como a fonte canônica da
+biblioteca. Preserve a linguagem visual SABLE, a interface minimalista e os IDs já
+publicados. Cada exemplo deve funcionar no catálogo e possuir uma pasta que outro
+agente consiga consultar, copiar e adaptar.
 
 ## Processo em alto nível
 
-1. Entenda se o pedido é abrir o catálogo, adicionar, refinar ou localizar uma
-   animação.
-2. Verifique o servidor e reutilize o processo ativo; inicie-o somente quando
-   necessário.
-3. Para adições ou refinamentos, altere o pacote da animação e o registro central.
-4. Valide estrutura, IDs, rotas e arquivos; faça um smoke test pelo servidor.
-5. Abra ou informe a URL exata, preferencialmente já no modo ou exemplo relevante.
-6. Quando o usuário escolher uma animação, entregue seu ID e caminho absoluto.
+1. Identifique se o usuário quer abrir o catálogo, adicionar ou refinar uma
+   animação, ou localizar uma implementação.
+2. Reutilize o servidor ativo ou inicie um servidor local quando necessário.
+3. Faça a alteração no pacote da animação e no registro central, quando houver.
+4. Valide arquivos, IDs, rotas e abertura pelo servidor.
+5. Abra a URL relevante ou entregue o ID e o caminho absoluto solicitado.
 
-## Comportamento padrão
+## Abrir e manter o servidor
 
-Quando o usuário invocar somente `$animate`, execute:
+Quando o usuário invocar apenas `$animate`, execute:
 
 ```bash
 python3 /Users/rtadewald/.agents/skills/animate/scripts/server.py start
 ```
 
-Leia a URL impressa e abra-a. Se o servidor já estiver ativo, o comando deve
-reutilizá-lo. Não crie processos duplicados. Mantenha o servidor ativo até o
-usuário pedir explicitamente para encerrá-lo.
+Abra a URL impressa pelo comando. `start` reutiliza o processo existente; não
+inicie um segundo servidor. Deixe-o ativo até o usuário pedir para encerrá-lo.
 
-Use `status` para inspecionar e `stop` somente sob pedido explícito:
+Use `status` para consultar o servidor. Use `stop` somente sob pedido explícito:
 
 ```bash
 python3 /Users/rtadewald/.agents/skills/animate/scripts/server.py status
 python3 /Users/rtadewald/.agents/skills/animate/scripts/server.py stop
 ```
 
-## Estrutura do catálogo
+## Organização do catálogo
 
-O entrypoint é `index.html`. O runtime usa HTML, CSS e JavaScript puros, sem build.
-As rotas são `#idle`, `#transitions`, `#interactions` e `#backgrounds`.
+`index.html` é o arquivo de entrada. O catálogo usa HTML, CSS e JavaScript puros,
+sem etapa de build. Os quatro modos são:
 
-- A navbar contém os quatro modos e a wordmark `ANIMATE`.
-- Cada modo possui sidebar própria, com somente categorias que tenham exemplos.
-- Idle, Entradas e Interações usam três colunas no desktop.
-- Backgrounds usa uma coluna.
-- Todos usam uma coluna no mobile.
-- A sidebar é sticky no desktop e vira trilho horizontal no mobile.
+- `#idle` — movimento contínuo em elementos;
+- `#transitions` — entradas e mudanças de estado;
+- `#interactions` — respostas a hover, clique, foco, drag, seleção ou scroll;
+- `#backgrounds` — movimento ambiental no fundo de uma superfície.
 
-Categorias descrevem onde a animação é aplicada, como Textos e tipografia,
-Botões e CTAs, Cards e containers, Navegação e seleção ou Hero e seções. Não crie
-categorias vazias. Tecnologias pertencem ao metadata, nunca à navegação principal.
+Cada modo possui uma barra lateral própria. Organize as categorias pelo local de
+aplicação, como Textos e tipografia, Botões e CTAs, Cards e containers ou Hero e
+seções. Mostre somente categorias que tenham exemplos; nunca crie seções vazias
+para antecipar usos futuros. Registre a tecnologia nos metadados, não na navegação.
+
+Use três colunas para Idle, Entradas e Interações no desktop. Use uma coluna para
+Backgrounds e uma coluna para todos os modos no mobile. No desktop, mantenha a
+barra lateral fixa durante a rolagem; no mobile, transforme-a em trilho horizontal.
 
 ## IDs e pacotes
 
-Use prefixos permanentes:
+Use estes prefixos permanentes:
 
-- `IDL-` para Idle;
-- `TRN-` para Entradas e transições;
-- `INT-` para Interações;
-- `BG-` para Backgrounds.
+- `IDL-` — Idle;
+- `TRN-` — Entradas e transições;
+- `INT-` — Interações;
+- `BG-` — Backgrounds.
 
-Escolha o próximo número livre do modo. Nunca renumere nem reutilize um ID
-publicado. Cada animação vive em `assets/animations/<id>-<slug>/` e inclui:
+Aloque o próximo número livre do modo. Nunca renumere nem reutilize um ID
+publicado. Cada animação vive em `assets/animations/<id>-<slug>/`:
 
 ```text
 meta.json
@@ -96,50 +96,64 @@ script.js
 assets/        # somente quando necessário
 ```
 
-Dependências auxiliares podem acompanhar o pacote. `meta.json` registra ID, nome,
-modo, categoria, origem, dependências, acessibilidade e os arquivos necessários.
-O botão `COPY ANIMATION` copia o caminho absoluto dessa pasta.
+Arquivos auxiliares podem acompanhar o pacote. Registre em `meta.json` o ID,
+nome, modo, categoria, arquivos necessários, dependências, origem, licença e
+suporte a movimento reduzido. O botão `COPY ANIMATION` deve copiar o caminho
+absoluto da pasta, não o código-fonte nem uma instrução composta.
 
-## Interface dos exemplos
+## Interface visual
 
-Mantenha cada exemplo minimalista: código, nome, demonstração e
-`COPY ANIMATION`. Somente Entradas e transições exibem `REPLAY`. Interações usam o
-gesto real dentro do palco. Idle e Backgrounds rodam continuamente. Mostre uma
-legenda curta apenas quando o gesto não for evidente.
+Mostre em cada exemplo somente:
 
-Preserve o design SABLE: Archivo, Bone `#EFEDE8`, Ink `#101010`, regras finas,
-sidebar escura, títulos editoriais em caixa alta e bastante espaço negativo. Não
-adicione pills, painéis técnicos, sliders ou decoração que não seja necessária.
+- ID e nome;
+- demonstração ao vivo;
+- `COPY ANIMATION`;
+- `REPLAY`, apenas em Entradas e transições.
+
+Idle e Backgrounds rodam continuamente. Interações respondem ao gesto real dentro
+da demonstração. Inclua uma legenda curta somente quando o gesto não for evidente.
+
+Preserve a linguagem SABLE: Archivo, Bone `#EFEDE8`, Ink `#101010`, regras finas,
+barra lateral escura, títulos editoriais em caixa alta e bastante espaço negativo.
+Não adicione controles, painéis técnicos, sliders ou decoração sem função direta.
 
 ## Adicionar uma animação
 
-1. Determine o modo e a superfície real de aplicação.
-2. Aloque o próximo ID livre e crie o pacote diretamente; não use rascunhos.
-3. Adicione a entrada em `assets/js/catalog.js` com uma categoria existente ou
-   uma nova categoria que já nasça com esse exemplo.
+1. Escolha o modo pelo comportamento principal e a categoria pela superfície de
+   aplicação.
+2. Aloque o próximo ID e crie o pacote diretamente, sem etapa de rascunho.
+3. Registre o exemplo em `assets/js/catalog.js`. Crie uma categoria nova somente
+   quando ela já receber esse exemplo.
 4. Prefira CSS, Web Animations API ou Canvas. Use WebGL apenas quando o efeito
-   precisar dele.
-5. Localize fontes e assets dentro de `assets/` sempre que possível. Quando uma
-   dependência remota for essencial, declare-a e ofereça fallback visual.
-6. Registre origem, URL e licença em `meta.json` e em comentários relevantes.
-7. Valide e abra o catálogo no hash do modo correspondente.
+   depender dele.
+5. Mantenha fontes, imagens e demais recursos locais sempre que possível. Declare
+   dependências remotas essenciais e ofereça uma alternativa visual.
+6. Registre origem, URL e licença em `meta.json` e nos comentários relevantes.
+7. Valide e abra o catálogo no modo correspondente.
 
 ## Refinar uma animação
 
-Preserve o ID e a pasta. Edite a implementação existente, mantenha o comportamento
-pedido e verifique se `demo.html` e o catálogo continuam equivalentes. Não mova o
-exemplo de modo ou categoria sem que o pedido exija isso.
+Resolva o ID para sua pasta e preserve ambos. Edite a implementação existente e
+confirme que `demo.html` e o catálogo continuam equivalentes. Só altere modo ou
+categoria quando o pedido exigir essa mudança.
 
-## Regras de runtime
+## Localizar uma implementação
 
-- Respeite `prefers-reduced-motion` com um estado estático representativo.
-- Pause o catálogo quando a aba estiver oculta. Efeitos pesados podem pausar fora
-  da viewport, mas não crie infraestrutura complexa para efeitos leves.
-- Toda animação que cria listeners, timers, RAFs ou recursos gráficos deve possuir
-  cleanup.
-- Preserve dimensões estáveis e legibilidade do conteúdo sobre o efeito.
-- Não interrompa exemplos que dependem da internet quando o fallback local estiver
-  funcionando; informe a dependência no metadata.
+Quando o usuário informar um ID, localize-o em `assets/js/catalog.js` ou nos
+`meta.json`. Entregue o ID, o nome e o caminho absoluto da pasta. A skill mantém e
+compartilha a biblioteca; outro agente faz a integração no projeto de destino,
+salvo quando o usuário pedir explicitamente para ampliar esse escopo.
+
+## Regras de execução
+
+- Respeite `prefers-reduced-motion` com uma apresentação estática equivalente.
+- Pause os efeitos quando a aba do navegador estiver oculta. Efeitos pesados podem
+  pausar fora da viewport; efeitos leves não precisam dessa infraestrutura.
+- Toda animação que cria listeners, timers, quadros de animação ou recursos
+  gráficos deve oferecer uma função de limpeza.
+- Preserve dimensões estáveis e a legibilidade do conteúdo sobre o efeito.
+- Quando um exemplo depender da internet, preserve uma alternativa local funcional
+  e registre a dependência nos metadados.
 
 ## Validação
 
@@ -150,13 +164,15 @@ python3 /Users/rtadewald/.agents/skills/animate/scripts/validate.py
 python3 /Users/rtadewald/.agents/skills/animate/scripts/server.py start
 ```
 
-Confirme que `index.html` responde, os quatro hashes funcionam, os IDs são únicos,
-os pacotes existem e o botão de cópia aponta para o diretório correto.
+Confirme que `index.html` responde pelo servidor, os quatro modos abrem, os IDs
+são únicos, os pacotes existem e `COPY ANIMATION` aponta para a pasta correta.
 
 ## Exemplo
 
-Pedido: `Use $animate para adicionar um hover magnético em botões.`
+Pedido:
+
+> Use `$animate` para adicionar um hover magnético em botões.
 
 Resultado esperado: criar o próximo pacote `INT-xx`, classificá-lo em Botões e
-CTAs, implementar a demonstração interativa, atualizar o registro, validar e abrir
+CTAs, implementar a demonstração, atualizar o registro, validar e abrir
 `http://127.0.0.1:<porta>/#interactions`.
