@@ -87,14 +87,7 @@ function makeSpecimen(item, sourceDocument) {
 
   const header = document.createElement('header');
   header.className = 'specimen-head';
-  header.innerHTML = `<span>${item.id}</span><h3>${item.name}</h3>`;
-  card?.prepend(header);
-
-  const footer = document.createElement('footer');
-  footer.className = 'specimen-foot';
-  const note = document.createElement('small');
-  note.textContent = item.hint || 'Implementation ready';
-  footer.append(note);
+  header.innerHTML = `<div class="specimen-title"><span>${item.id}</span><h3>${item.name}</h3></div>`;
 
   const actions = document.createElement('div');
   actions.className = 'specimen-actions';
@@ -107,8 +100,8 @@ function makeSpecimen(item, sourceDocument) {
   copy.dataset.copyPath = item.path;
   copy.textContent = 'COPY ANIMATION';
   actions.append(copy);
-  footer.append(actions);
-  card?.append(footer);
+  header.append(actions);
+  card?.prepend(header);
 
   return specimen;
 }
