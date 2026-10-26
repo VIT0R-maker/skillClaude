@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>Fixture local de verificação</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <header>
+    <a href="#inicio">Fixture local</a>
+    <nav class="desktop" aria-label="Principal"><a href="#detalhes">Detalhes</a><a href="#contato">Contato</a></nav>
+    <button id="menu-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false" aria-label="Abrir menu"><span aria-hidden="true">☰</span></button>
+    <nav id="mobile-menu" aria-label="Menu mobile" inert><a href="#detalhes">Detalhes</a><a href="#contato">Contato</a></nav>
+  </header>
+  <main>
+    <section id="inicio" tabindex="-1"><p class="eyebrow">EXEMPLO TÉCNICO</p><h1>Uma página simples para exercitar o kit.</h1><p>Esta fixture testa ferramentas. Ela não reproduz uma referência visual do usuário.</p><a class="button" href="#detalhes">Conhecer detalhes</a></section>
+    <section id="detalhes" class="reveal" tabindex="-1"><h2>Imagem abaixo da dobra</h2><p>A captura deve carregar esta imagem e concluir a revelação.</p><img src="scene.svg" width="1000" height="560" loading="lazy" alt="Formas geométricas de demonstração"></section>
+    <section id="contato" class="reveal" tabindex="-1"><h2>Validação local</h2><p>Formulário de demonstração sem serviço de envio.</p><form><label for="email">E-mail</label><input id="email" name="email" type="email" required><button type="submit">Verificar dados localmente</button><p id="form-status" role="status"></p></form></section>
+  </main>
+  <footer>Fixture técnica · sem dados comerciais</footer>
+</body>
+</html>

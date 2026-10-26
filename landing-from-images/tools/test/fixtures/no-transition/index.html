@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>Fixture defeituosa: menu sem transição</title>
+  <style>
+    body { margin: 0; font: 18px system-ui; }
+    header { display: flex; justify-content: space-between; padding: 16px; }
+    #panel[hidden] { display: none; }
+    @media (min-width: 900px) { #toggle { display: none; } }
+  </style>
+</head>
+<body>
+  <header><a href="#inicio">Sem transição</a><button id="toggle" type="button" aria-expanded="false" aria-controls="panel">Menu</button></header>
+  <nav id="panel" hidden aria-label="Principal"><a href="#inicio">Início</a></nav>
+  <main><h1 id="inicio">Menu que aparece e some de forma abrupta</h1></main>
+  <script>
+    const toggle = document.querySelector('#toggle');
+    const panel = document.querySelector('#panel');
+    toggle.addEventListener('click', () => {
+      const open = toggle.getAttribute('aria-expanded') !== 'true';
+      toggle.setAttribute('aria-expanded', String(open));
+      panel.hidden = !open;
+    });
+    document.addEventListener('keydown', event => { if (event.key === 'Escape') { toggle.setAttribute('aria-expanded', 'false'); panel.hidden = true; toggle.focus(); } });
+  </script>
+</body>
+</html>

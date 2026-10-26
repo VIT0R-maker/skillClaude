@@ -1,0 +1,16 @@
+{
+  "name": "landing-from-images-tools",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22.12.0" },
+  "scripts": {
+    "test": "node --test test/core.test.mjs test/compare.test.mjs",
+    "test:browser": "node --test test/browser.test.mjs",
+    "verify:fixture": "node verify.mjs --root fixture --out .work/verification --desktop-width 1200 --config fixture/verify-config.json"
+  },
+  "dependencies": {
+    "playwright": "1.64.1",
+    "sharp": "0.35.5"
+  }
+}

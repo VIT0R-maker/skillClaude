@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>Fixture de menu modal</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font: 18px system-ui; background: #f5f3e9; color: #19322e; }
+    header, main { padding: 24px; }
+    header { display: flex; justify-content: space-between; }
+    button, a { padding: 12px; font: inherit; }
+    section { min-height: 550px; padding: 40px 0; }
+    #menu { position: fixed; z-index: 5; inset: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 24px; padding: 32px; background: #19322e; color: white; opacity: 0; transform: translateY(-12px); visibility: hidden; pointer-events: none; transition: opacity 280ms, transform 280ms, visibility 0s 280ms; }
+    #menu.open { opacity: 1; transform: none; visibility: visible; pointer-events: auto; transition-delay: 0s; }
+    #menu a { color: white; }
+    @media (min-width: 900px) { #open { display: none; } }
+    @media (prefers-reduced-motion: reduce) { * { transition-duration: .01ms !important; transition-delay: 0s !important; } }
+  </style>
+</head>
+<body>
+  <div id="background">
+    <header><a href="#inicio">Fixture modal</a><button id="open" aria-expanded="false" aria-controls="menu" type="button">Abrir menu</button></header>
+    <main><section id="inicio" tabindex="-1"><h1>Menu com fundo inerte</h1><p>O botão de abertura fica inacessível enquanto o modal está aberto.</p></section><section id="detalhes" tabindex="-1"><h2>Detalhes</h2><a href="#inicio">Voltar</a></section></main>
+  </div>
+  <nav id="menu" role="dialog" aria-modal="true" aria-label="Menu principal" inert>
+    <button id="close" type="button">Fechar menu</button><a href="#detalhes">Detalhes</a><a href="#inicio">Início</a>
+  </nav>
+  <script>
+    const opener = document.querySelector('#open');
+    const closer = document.querySelector('#close');
+    const menu = document.querySelector('#menu');
+    const background = document.querySelector('#background');
+    function setOpen(open, restoreFocus = true) {
+      opener.setAttribute('aria-expanded', String(open));
+      menu.classList.toggle('open', open);
+      menu.inert = !open;
+      background.inert = open;
+      document.body.style.overflow = open ? 'hidden' : '';
+      if (open) closer.focus();
+      else if (restoreFocus) opener.focus();
+    }
+    opener.addEventListener('click', () => setOpen(true));
+    closer.addEventListener('click', () => setOpen(false));
+    document.addEventListener('keydown', event => {
+      if (opener.getAttribute('aria-expanded') !== 'true') return;
+      if (event.key === 'Escape') setOpen(false);
+      if (event.key === 'Tab') {
+        const items = [...menu.querySelectorAll('button, a')];
+        const next = (items.indexOf(document.activeElement) + (event.shiftKey ? -1 : 1) + items.length) % items.length;
+        event.preventDefault(); items[next].focus();
+      }
+    });
+    menu.addEventListener('click', event => {
+      const link = event.target.closest('a[href^="#"]');
+      if (link) { setOpen(false, false); document.querySelector(link.getAttribute('href')).focus(); }
+    });
+    matchMedia('(min-width:900px)').addEventListener('change', event => { if (event.matches) setOpen(false, false); });
+  </script>
+</body>
+</html>

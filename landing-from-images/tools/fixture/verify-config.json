@@ -1,0 +1,4 @@
+{
+  "menu": { "toggle": "#menu-toggle", "panel": "#mobile-menu", "breakpoint": 900, "durationMs": 320 },
+  "regions": [{ "name": "hero", "selector": "#inicio" }, { "name": "detalhes", "selector": "#detalhes" }]
+}

@@ -1,0 +1,29 @@
+:root { color-scheme: light; font-family: system-ui, sans-serif; color: #19322e; background: #f5f3e9; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; }
+a { color: inherit; text-underline-offset: 4px; }
+header { position: relative; z-index: 2; display: flex; align-items: center; justify-content: space-between; padding: 24px 6%; border-bottom: 1px solid #bfcfc6; }
+nav { display: flex; gap: 24px; }
+section { width: min(1100px, 88%); margin: auto; padding: 96px 0; }
+#inicio { min-height: 850px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
+h1 { font-size: clamp(2.4rem, 5vw, 4.8rem); line-height: 1.04; max-width: 850px; margin: 20px 0; }
+h2 { font-size: clamp(1.9rem, 3vw, 3rem); }
+p { line-height: 1.6; max-width: 620px; }
+.eyebrow { font-size: .8rem; letter-spacing: .16em; }
+button, .button { border: 0; border-radius: 8px; padding: 14px 22px; background: #205343; color: white; font: inherit; cursor: pointer; transition: background-color 180ms, transform 180ms; }
+button:hover, .button:hover { background: #122f27; }
+button:active, .button:active { transform: translateY(2px); }
+:focus-visible { outline: 3px solid #a75521; outline-offset: 5px; }
+.button { display: inline-block; margin-top: 16px; text-decoration: none; }
+img { display: block; width: 100%; height: auto; border-radius: 20px; }
+form { display: grid; gap: 12px; max-width: 500px; }
+input { padding: 14px; border: 1px solid #617c6d; border-radius: 8px; font: inherit; width: 100%; }
+footer { padding: 32px 6%; border-top: 1px solid #bfcfc6; }
+#menu-toggle { display: none; }
+#mobile-menu { position: absolute; top: 100%; left: 0; right: 0; padding: 28px 6%; background: #19322e; color: white; flex-direction: column; opacity: 0; transform: translateY(-12px); visibility: hidden; pointer-events: none; transition: opacity 260ms ease, transform 260ms ease, visibility 0s linear 260ms; }
+#mobile-menu.open { opacity: 1; transform: translateY(0); visibility: visible; pointer-events: auto; transition-delay: 0s; }
+.js .reveal { opacity: 0; transform: translateY(16px); transition: opacity 420ms ease, transform 420ms ease; }
+.js .reveal.shown { opacity: 1; transform: none; }
+@media (max-width: 899px) { .desktop { display: none; } #menu-toggle { display: block; min-width: 48px; min-height: 48px; } section { padding: 64px 0; } #inicio { min-height: 820px; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition-duration: .01ms !important; transition-delay: 0s !important; animation-duration: .01ms !important; } .js .reveal { opacity: 1; transform: none; } }
