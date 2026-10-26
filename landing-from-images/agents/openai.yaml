@@ -1,0 +1,9 @@
+# Compatibilidade com o Codex, mantida por convenção deste repositório (ver AGENTS.md).
+# O Claude Code NÃO usa este arquivo: nome, invocação (/landing-from-images) e política
+# (disable-model-invocation) vêm do frontmatter do SKILL.md. Remover este arquivo não afeta o Claude.
+interface:
+  display_name: "Landing from Images"
+  short_description: "Imagens em landing pages fiéis, responsivas e verificadas"
+  default_prompt: "Use $landing-from-images: reproduza as imagens anexadas em uma landing page responsiva, com animações e verificação autônoma."
+policy:
+  allow_implicit_invocation: false

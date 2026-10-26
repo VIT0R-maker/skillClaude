@@ -42,9 +42,11 @@ componentes, runtime ou ferramentas.
 
 Sempre que houver qualquer alteração no **nome** de uma skill (renomear pasta, criar skill nova, apagar skill, ou mudar o `name` no frontmatter), atualize também o [`README.md`](./README.md) para refletir a mudança.
 
-## OpenAI agent metadata
+## Metadados para o Codex (`agents/openai.yaml`)
 
-Toda skill neste repositório deve ter o arquivo `agents/openai.yaml`, no padrão:
+O Codex lê `agents/openai.yaml`; o **Claude Code não o usa**. Nome, invocação e política de uma skill no Claude
+vêm do frontmatter do `SKILL.md` (veja a seção seguinte). O arquivo é, portanto, compatibilidade com o Codex e
+nunca um requisito de funcionamento no Claude. As skills existentes mantêm o arquivo, no padrão:
 
 ```yaml
 interface:
@@ -55,4 +57,23 @@ policy:
   allow_implicit_invocation: false
 ```
 
-Ao **criar** ou **renomear** uma skill, crie ou atualize esse arquivo junto (o `$nome-da-skill` no `default_prompt` deve bater com a pasta / `name` do `SKILL.md`).
+Ao **criar** ou **renomear** uma skill pensada também para o Codex, crie ou atualize o arquivo junto (o
+`$nome-da-skill` do `default_prompt` deve bater com a pasta / `name` do `SKILL.md`). Skills feitas só para o
+Claude Code podem omiti-lo. Quando o arquivo existir numa skill nativa do Claude, comece-o com um comentário que
+declare sua finalidade, como em [`landing-from-images/agents/openai.yaml`](./landing-from-images/agents/openai.yaml).
+
+## Claude Code
+
+O Claude Code lê `CLAUDE.md`, não este arquivo; o [`CLAUDE.md`](./CLAUDE.md) da raiz importa `@AGENTS.md`, então
+tudo aqui também vale para ele. Ao criar ou adaptar uma skill para o Claude Code:
+
+- **Frontmatter do `SKILL.md`:** `name` igual ao da pasta; `description` com o uso principal logo no começo (a
+  listagem trunca `description` + `when_to_use` em 1.536 caracteres); `disable-model-invocation: true` para fluxos
+  que só devem iniciar por `/nome`; `argument-hint` quando houver argumentos, usados no corpo com `$ARGUMENTS`.
+- **Tamanho e ordem:** `SKILL.md` com menos de 500 linhas e o essencial no topo, porque depois de uma compactação
+  só o início do corpo é preservado. Detalhes ficam em `references/`.
+- **Caminhos:** scripts da própria skill via `${CLAUDE_SKILL_DIR}`, nunca caminhos pessoais de outro autor
+  (`/Users/...`). Evite injeção `` !`comando` `` no corpo: ela exige bash e falha no Windows sem Git Bash.
+- **Instalação:** pessoal em `~/.claude/skills/<nome>`; por projeto em `.claude/skills/<nome>`. Instaladores
+  preservam as demais skills e guardam backups fora da pasta `skills`, para não serem lidos como duplicatas.
+- **Windows:** documente comandos que funcionem em CMD e PowerShell, sem `open`, `chmod` ou atalhos Unix.

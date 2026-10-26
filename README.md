@@ -2,6 +2,8 @@
 
 Skills que uso nos agentes (Cursor / Claude / Codex). Cada pasta tem um `SKILL.md`.
 
+**Claude Code:** `landing-from-images` instala em `~/.claude/skills` (ou por projeto) com `node landing-from-images/scripts/install.mjs`. Veja [o README dela](./landing-from-images/README.md).
+
 ---
 
 ## Telas
@@ -25,6 +27,7 @@ Quando quero tirar a linguagem visual de uma referência e deixar pronta pra imp
 - [`img-to-html`](./img-to-html): mock → **wireframe ASCII tipado + plano** → **aprovação** → `index.html` + `assets/styles.css` (sem framework): fundo completo (CSS/imagens) → componentes com fontes → assets restantes → revisão final, cada etapa aplicável com gate
 - [`img-to-html2`](./img-to-html2): wireframe ASCII tipado → **aprovação** → detect fontes (fal-ai OCR + Gemini 3.1 Pro / OpenRouter) → `typography.css` + `index.html` shell
 - [`img-to-html3`](./img-to-html3): toolbox (fontes, cores pixel, PNG, SVG/ASCII) dirigida por prompt humano — sem pipeline fixo
+- [`landing-from-images`](./landing-from-images): imagens de uma interface (uma longa, partes consecutivas, desktop e mobile) → **landing page estática, responsiva e funcional**, de forma autônoma e sem gates: mapa de referências, recortes das próprias imagens (sem gerar fotos), mobile derivado, interações, capturas e testes. Nativa do Claude Code (`/landing-from-images`), com instalador e kit de verificação próprios
 
 ## Imagem
 
